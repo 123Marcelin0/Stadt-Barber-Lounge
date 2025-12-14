@@ -45,6 +45,9 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    /* Critical for mobile */
+    width: 100%;
 }
 
 body {
@@ -53,6 +56,11 @@ body {
     color: var(--text-main);
     line-height: 1.6;
     overflow-x: hidden;
+    /* Double lock */
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
 }
 
 a {

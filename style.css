@@ -1237,6 +1237,15 @@ body {
     transition: opacity 1.5s ease-in-out;
 }
 
+@media (max-width: 900px) {
+    .hero-slide {
+        background-attachment: scroll !important;
+        /* Fix ios parallax bug if any */
+        background-position: center top !important;
+        background-size: cover !important;
+    }
+}
+
 .hero-slide.active {
     opacity: 1;
 }
@@ -1926,8 +1935,30 @@ footer {
     transition-delay: 0.3s;
 }
 
-.delay-400 {
-    transition-delay: 0.4s;
+@media (max-width: 900px) {
+
+    /* DISABLE ANIMATIONS ON MOBILE to prevent horizontal scroll and "hidden" content */
+    .anim-up,
+    .anim-left,
+    .anim-right,
+    .anim-zoom,
+    .delay-100,
+    .delay-200,
+    .delay-300,
+    .delay-400 {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+        animation: none !important;
+    }
+
+    /* Reset specific ghost margins */
+    body,
+    html {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+    }
 }
 
 /* =========================================

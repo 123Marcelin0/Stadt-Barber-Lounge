@@ -1,0 +1,1960 @@
+/* =========================================
+   VARIABLES & RESET
+   ========================================= */
+:root {
+    /* Colors - White & Silver Theme */
+    --gold: #A0A0A0;
+    /* Silver instead of Gold */
+    --wood: #333333;
+    /* Dark Gray replacement for Wood */
+    --gold-hover: #808080;
+    --royal-blue: #2c3e50;
+    /* Dark Slate Blue/Grey for contrast */
+
+    /* Backgrounds */
+    --bg-dark: #FFFFFF;
+    /* Main background White */
+    --bg-darker: #F4F4F4;
+    /* Light Silver/Grey for sections */
+    --bg-card: #FFFFFF;
+
+    /* Text */
+    --text-main: #111111;
+    /* Dark text */
+    --text-muted: #666666;
+
+    /* Typography */
+    --font-heading: 'Oswald', sans-serif;
+    --font-body: 'Outfit', sans-serif;
+
+    /* Layout */
+    --container-width: 1200px;
+    --header-height: 80px;
+    --border-radius: 20px;
+
+    /* Effects */
+    --shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    /* Lighter shadow */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* =========================================
+   UTILITIES & TYPOGRAPHY
+   ========================================= */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-gold {
+    color: var(--gold);
+}
+
+.text-blue {
+    color: var(--royal-blue);
+}
+
+h1,
+h2,
+h3,
+h4,
+.btn {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    position: relative;
+    display: inline-block;
+}
+
+.section-subtitle {
+    color: var(--wood);
+    /* Wood color for 'Welcome to the Club' */
+    font-family: var(--font-heading);
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Hexagon Separator for Section Titles (Optional visual flair) */
+.section-header::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--royal-blue);
+    margin: 20px auto 0;
+}
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 35px;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+.btn-primary {
+    background-color: var(--text-main);
+    /* Black */
+    color: #FFF;
+}
+
+.btn-primary:hover {
+    background-color: var(--wood);
+    /* Wood hover */
+    color: #FFF;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(139, 94, 60, 0.3);
+}
+
+.btn-secondary {
+    border: 2px solid var(--wood);
+    background: var(--wood);
+    color: #FFF;
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgba(139, 94, 60, 0.4);
+}
+
+.btn-secondary:hover {
+    background: transparent;
+    color: #FFF;
+    /* Keep white text for contrast on dark bg, or check bg */
+    border-color: #FFF;
+    /* White border */
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Instagram Typing Button */
+.btn-insta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 25px;
+    /* Adjust width dynamically */
+    background: #000;
+    color: #FFF;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    height: 50px;
+    /* Fixed height to keep it neat */
+    min-width: 50px;
+    /* Start as circle/square ish */
+}
+
+.btn-insta i {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-insta .insta-handle {
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: 0;
+    margin-left: 0;
+    font-family: 'Courier New', monospace;
+    /* Typewriter look */
+    font-weight: 600;
+    transition: all 0.5s steps(20, end);
+    /* Typing effect logic */
+}
+
+.btn-insta:hover {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    box-shadow: 0 5px 20px rgba(214, 36, 159, 0.4);
+    padding-right: 25px;
+    /* Make space for text */
+}
+
+.btn-insta:hover i {
+    transform: rotate(360deg);
+}
+
+.btn-insta:hover .insta-handle {
+    max-width: 250px;
+    /* Allow text to reveal */
+    opacity: 1;
+    margin-left: 10px;
+}
+
+.floating-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--gold);
+    color: var(--bg-darker);
+    padding: 15px 30px;
+    border-radius: 50px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: pulse 2s infinite;
+}
+
+.floating-btn i {
+    font-size: 1.2rem;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(197, 160, 89, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(197, 160, 89, 0);
+    }
+}
+
+@media (min-width: 769px) {
+    .floating-btn {
+        display: none;
+    }
+
+    /* Show only on mobile/tablet or if preferred always */
+}
+
+/* =========================================
+   SIDEBAR & LAYOUT
+   ========================================= */
+.sidebar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 350px;
+    height: calc(100vh - 40px);
+    /* Floating height */
+
+    /* Apple Liquid Glass Effect - Clearer */
+    background: rgba(255, 255, 255, 0.25);
+    /* More transparent */
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 40px;
+
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    z-index: 1000;
+
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+
+    /* Transition for smooth morphing - Slower */
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: width, height, padding, border-radius;
+    overflow: hidden;
+}
+
+/* Shrinking State (Intermediate Rounded Cube) */
+.sidebar.shrinking {
+    width: 80px;
+    height: 80px;
+    /* Same height as topbar */
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    /* Rounded corners (Squircle) */
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar.shrinking .logo-sidebar {
+    margin: 0;
+    width: 100%;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar.shrinking .logo-sidebar img {
+    max-width: 40px;
+    border-radius: 50%;
+    margin: 0;
+}
+
+.sidebar.shrinking .sidebar-nav,
+.sidebar.shrinking .sidebar-footer {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+/* Topbar Mode State */
+.sidebar.topbar-mode {
+    width: calc(100% - 120px);
+    /* Narrower to fit between poles (60px gap each side) */
+    left: 60px;
+    /* Centered with new width */
+    height: 80px;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 30px;
+    justify-content: space-between;
+
+    /* Match Sidebar Glass Effect */
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    border-radius: 20px;
+}
+
+.sidebar.topbar-mode .sidebar-nav,
+.sidebar.topbar-mode .sidebar-footer {
+    opacity: 1;
+    pointer-events: all;
+    position: relative;
+    width: auto;
+    height: auto;
+    transition: opacity 0.3s ease 0.2s;
+}
+
+.sidebar.topbar-mode .logo-sidebar {
+    margin-bottom: 0;
+    margin-right: auto;
+    /* Push others right if needed, or keeping space-between handles it */
+}
+
+.sidebar.topbar-mode .logo-sidebar img {
+    max-width: 50px;
+    box-shadow: none;
+}
+
+.sidebar.topbar-mode .sidebar-nav ul {
+    flex-direction: row;
+    gap: 40px;
+}
+
+.sidebar.topbar-mode .sidebar-footer {
+    margin-top: 0;
+    margin-left: 40px;
+    /* Spacing from nav */
+    flex-direction: row;
+}
+
+/* Hide extra footer stuff in topbar if needed, mainly insta button stays */
+.sidebar.topbar-mode .sidebar-copyright {
+    display: none;
+}
+
+/* Main content is FULL WIDTH, sidebar sits on TOP of the left side */
+.main-content {
+    margin-left: 0;
+    width: 100%;
+    position: relative;
+    background-color: var(--bg-dark);
+}
+
+/* Sidebar Logo */
+.logo-sidebar {
+    display: block;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.logo-sidebar img {
+    width: 100%;
+    max-width: 180px;
+    /* Limit size */
+    height: auto;
+    margin: 0 auto;
+    border-radius: 50%;
+    /* Since it's a round logo */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    transition: transform 0.3s ease;
+}
+
+.logo-sidebar:hover img {
+    transform: scale(1.05);
+    /* Subtle zoom on hover */
+}
+
+/* Sidebar Nav */
+.sidebar-nav {
+    flex-grow: 1;
+    /* Take up available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Center content vertically */
+}
+
+.sidebar-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    /* Center items */
+    text-align: center;
+}
+
+.sidebar-nav a {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: #FFF;
+    /* Changed to White */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+    color: #FFF;
+    /* Keep White on hover/active */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    /* Add glow instead of color change */
+}
+
+/* Override for Topbar Mode to be Black */
+.sidebar.topbar-mode .sidebar-nav a {
+    color: #000;
+    text-shadow: none;
+}
+
+.sidebar.topbar-mode .sidebar-nav a:hover,
+.sidebar.topbar-mode .sidebar-nav a.active {
+    color: #000;
+}
+
+.sidebar-nav a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background: #FFF;
+    /* White underline */
+    transition: width 0.3s ease;
+}
+
+.sidebar.topbar-mode .sidebar-nav a::before {
+    background: #000;
+    /* Black underline for topbar */
+}
+
+.sidebar-nav a:hover::before {
+    width: 100%;
+}
+
+/* Sidebar Footer (Insta Button) */
+.sidebar-footer {
+    margin-top: 0;
+    /* Let flex-grow push it down if needed, or just let spacing handle it */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    /* Center items */
+}
+
+/* New Sidebar Insta Button */
+.btn-insta-sidebar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    background: transparent;
+    color: #FFF;
+    /* White icon default */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+}
+
+.btn-insta-sidebar i {
+    font-size: 1.8rem;
+    color: #FFF;
+    /* White icon */
+    transition: transform 0.3s ease, color 0.3s ease;
+    width: 50px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.btn-insta-sidebar .insta-handle {
+    white-space: nowrap;
+    opacity: 0;
+    max-width: 0;
+    margin-left: 0;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.5s ease;
+    color: #000;
+    /* Text inside hover pill should probably be black if bg is light, or white if bg is dark */
+}
+
+/* Override for Topbar */
+.sidebar.topbar-mode .btn-insta-sidebar {
+    color: #000;
+}
+
+.sidebar.topbar-mode .btn-insta-sidebar i {
+    color: #000;
+}
+
+/* Expanding Effect on Hover/Focus */
+.btn-insta-sidebar:hover {
+    width: 200px;
+    background: #F0F0F0;
+}
+
+.btn-insta-sidebar:hover .insta-handle {
+    opacity: 1;
+    max-width: 150px;
+    margin-left: 5px;
+    color: #000;
+    /* Ensure text is visible on light grey bg */
+}
+
+/* Expanding Effect on Hover/Focus */
+.btn-insta-sidebar:hover {
+    width: 200px;
+    /* Expand width */
+    background: #F0F0F0;
+    /* Subtle grey bg on expand */
+}
+
+.btn-insta-sidebar:hover i {
+    color: #E1306C;
+    /* Instagram Color */
+    transform: rotate(360deg);
+}
+
+.btn-insta-sidebar:hover .insta-handle {
+    opacity: 1;
+    max-width: 150px;
+    margin-left: 5px;
+}
+
+.sidebar-copyright {
+    font-size: 0.6rem;
+    color: #CCC;
+    margin-top: 10px;
+}
+
+/* Mobile Toggle */
+.mobile-toggle {
+    display: none;
+}
+
+/* Adjustments for existing sections to fit new layout */
+.hero {
+    width: 100%;
+    height: 100vh;
+    padding-left: 0;
+    /* Remove old offsets */
+    justify-content: center;
+    /* Center content in the new main area */
+    align-items: center;
+}
+
+.hero .container {
+    padding-left: 300px;
+    /* Push content right so it's not hidden by 280px sidebar */
+    width: 100%;
+}
+
+/* Hide floating button on desktop as it's in sidebar now */
+@media (min-width: 900px) {
+    .floating-btn {
+        display: none !important;
+    }
+}
+
+/* Responsive: Collapse to mobile menu on small screens */
+/* =========================================
+   MOBILE MENACE (RESPONSIVE)
+   ========================================= */
+
+/* Mobile Toggle Button */
+.mobile-toggle {
+    display: none;
+    /* Hidden on Desktop */
+}
+
+@media (max-width: 900px) {
+
+    /* Show Toggle */
+    .mobile-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 12px;
+        z-index: 2000;
+        cursor: pointer;
+        color: #FFF;
+        font-size: 1.5rem;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .mobile-toggle:active {
+        transform: scale(0.9);
+    }
+
+    /* Sidebar - Full Screen Overlay Glitch Mode */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(10, 10, 15, 0.95);
+        /* Deep dark tint */
+        backdrop-filter: blur(50px);
+        -webkit-backdrop-filter: blur(50px);
+        z-index: 1999;
+        transform: translateY(-100%);
+        /* Slide form top */
+        transition: transform 0.6s cubic-bezier(0.7, 0, 0.3, 1);
+        padding: 40px;
+        border: none;
+        border-radius: 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sidebar.active {
+        transform: translateY(0);
+    }
+
+    /* Adjust Sidebar Content for Mobile */
+    .logo-sidebar {
+        margin-bottom: 40px;
+    }
+
+    .logo-sidebar img {
+        max-width: 120px;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+
+    .sidebar-nav ul {
+        gap: 40px;
+    }
+
+    .sidebar-nav a {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #FFF;
+        opacity: 0;
+        /* Animate in */
+        transform: translateY(20px);
+        transition: all 0.4s ease;
+    }
+
+    .sidebar.active .sidebar-nav a {
+        opacity: 1;
+        transform: translateY(0);
+        /* Staggered delay handled via css or js, simple transition here */
+    }
+
+    .sidebar.active .sidebar-nav li:nth-child(1) a {
+        transition-delay: 0.1s;
+    }
+
+    .sidebar.active .sidebar-nav li:nth-child(2) a {
+        transition-delay: 0.2s;
+    }
+
+    .sidebar.active .sidebar-nav li:nth-child(3) a {
+        transition-delay: 0.3s;
+    }
+
+    .sidebar.active .sidebar-nav li:nth-child(4) a {
+        transition-delay: 0.4s;
+    }
+
+    .sidebar.active .sidebar-nav li:nth-child(5) a {
+        transition-delay: 0.5s;
+    }
+
+
+    /* Main Content Adjustments */
+    .main-content {
+        width: 100%;
+        margin: 0;
+    }
+
+    /* Hero Section Mobile */
+    .hero {
+        padding-left: 20px !important;
+        /* Override current padding */
+        padding-right: 20px;
+        padding-top: 0 !important;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero .container {
+        padding-left: 0 !important;
+        text-align: center;
+    }
+
+    .hero-content {
+        margin: 0 auto;
+        text-align: center;
+        margin-left: 0 !important;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+        /* Smaller for mobile */
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+    }
+
+    .hero-content p {
+        margin-left: 0;
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        margin-left: 0;
+        justify-content: center;
+    }
+
+    /* Services Mobile */
+    .service-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .service-item img {
+        height: 120px;
+    }
+
+    /* Lounge Mobile */
+    .lounge-container {
+        grid-template-columns: 1fr;
+    }
+
+    .lounge-text {
+        padding-left: 0;
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .lounge-features {
+        display: inline-block;
+        text-align: left;
+    }
+
+    /* Contact Mobile */
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-video-container {
+        height: 250px;
+        order: 2;
+    }
+
+    .contact-left-column {
+        order: 1;
+    }
+
+    /* Sidebar Mobile - Scrollable & Fullscreen */
+    .sidebar.topbar-mode,
+    .sidebar {
+        /* Ensure specific mobile override for sidebar always wins */
+        width: 100% !important;
+        left: 0 !important;
+        height: 100vh !important;
+        flex-direction: column !important;
+        background: rgba(10, 10, 15, 0.98) !important;
+        /* Slightly more opaque for performance */
+        padding: 80px 20px 40px !important;
+        /* Top padding for toggle button */
+        justify-content: flex-start !important;
+        border-radius: 0 !important;
+        transform: translateY(-100%);
+        overflow-y: auto !important;
+        /* Allow scrolling on small phones */
+        border: none !important;
+    }
+
+    .sidebar.active {
+        transform: translateY(0) !important;
+    }
+
+    /* Antigravity Poles Mobile - Unhide as requested */
+    .barber-poles-container {
+        display: block !important;
+        z-index: 50;
+        /* Below sidebar (1999) but above content */
+    }
+
+    .barber-pole {
+        width: 15px;
+        /* Thinner on mobile */
+    }
+}
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+.hero {
+    height: 100vh;
+    min-height: 700px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    align-items: center;
+    /* Background moved to slideshow */
+    background: #000;
+
+    /* Align content strictly in the gap: Left of the Blue Barber, Right of the Column */
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 28%;
+    /* Adjusted further right as requested */
+    padding-top: 15vh;
+    /* Shifts content further down as requested */
+}
+
+/* OVERRIDE CONTAINER FOR HERO ONLY */
+.hero .container {
+    max-width: 100%;
+    margin: 0;
+    padding-left: 2%;
+    /* Tiny padding from screen edge */
+    width: 100%;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* Light overlay for text readability only */
+    background: rgba(0, 0, 0, 0.3);
+    /* Slightly darker to ensure white text pops */
+    z-index: 1;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to bottom, transparent, var(--bg-dark));
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    /* Expanded to align with header nav start */
+    text-align: left;
+}
+
+.hero-content h1 {
+    font-size: 3.0rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+    /* White Text on Hero */
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    /* Strong shadow for readability */
+}
+
+.hero-content h1 span.text-gold {
+    color: #E0E0E0;
+    /* Silver/White for Hero */
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    color: #F0F0F0;
+    margin-bottom: 40px;
+    max-width: 600px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    margin-left: 80px;
+    /* Indented more */
+}
+
+/* Distinct style for Hero Subtitle ('Welcome to the Club') */
+/* Distinct style for Hero Subtitle ('Welcome to the Club') */
+.hero-content .section-subtitle {
+    display: none;
+    /* User requested to remove it completely */
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    margin-left: 80px;
+    /* Indented more */
+}
+
+.teaser-badge {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 300px;
+    z-index: 2;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.teaser-badge i {
+    font-size: 2rem;
+    color: var(--gold);
+}
+
+.teaser-badge div h4 {
+    color: var(--white);
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.teaser-badge div p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* =========================================
+   HERO VIDEO WIDGET
+   ========================================= */
+/* (This comment is just to align with previous context, appending below) */
+
+/* ... (Assuming previous content ends here) ... */
+
+/* =========================================
+   ANTIGRAVITY BARBER POLES (SCROLLING BORDERS)
+   ========================================= */
+.barber-poles-container {
+    position: absolute;
+    top: 100vh;
+    /* Start after Hero */
+    left: 0;
+    width: 100%;
+    /* Use a very large height if we can't calculate content height in pure CSS easily
+       OR use bottom: 0 relative to body/HTML if they are relative.
+       Since body has content, absolute positioning relative to body (if body is relative) works. */
+    height: calc(100% - 100vh);
+    /* Total height minus hero */
+    pointer-events: none;
+    z-index: 900;
+}
+
+/* Ensure Body is relative for absolute positioning to work relative to full page height */
+body {
+    position: relative;
+    /* ... existing styles ... */
+}
+
+.barber-poles-container.visible {
+    /* No longer needed but kept for safety */
+    opacity: 1;
+    visibility: visible;
+}
+
+.barber-pole {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    /* Stretch to fill container */
+    width: 25px;
+    /* Height is implicit via top/bottom */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    /* Stack cap-shaft-cap */
+}
+
+.barber-pole.left {
+    left: 0;
+    border-right: 1px solid rgba(0, 0, 0, 0.5);
+    /* Optional: define inner border */
+}
+
+.barber-pole.right {
+    right: 0;
+    border-left: 1px solid rgba(0, 0, 0, 0.5);
+    /* Optional: define inner border */
+}
+
+/* Caps */
+.pole-cap {
+    height: 30px;
+    /* Fixed height */
+    width: 100%;
+    background: linear-gradient(90deg, #888, #fff, #888);
+    background-color: #d4d4d4;
+    border-radius: 4px;
+    position: relative;
+    z-index: 2;
+    box-shadow: inset 0 -2px 5px rgba(0, 0, 0, 0.5), 0 5px 15px rgba(0, 0, 0, 0.3);
+    flex-shrink: 0;
+    /* Prevent shrinking */
+    display: block !important;
+    /* Force show */
+}
+
+.pole-cap.top {
+    border-bottom: 2px solid #666;
+}
+
+.pole-cap.bottom {
+    border-top: 2px solid #666;
+}
+
+/* Shaft */
+.pole-shaft {
+    flex-grow: 1;
+    /* Fill remaining space */
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background: #1a1a2e;
+    z-index: 1;
+}
+
+/* Stripes */
+.pole-stripes {
+    position: absolute;
+    top: -50%;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    /* Ensure coverage */
+    background: repeating-linear-gradient(-45deg,
+            #ffffff 0,
+            #ffffff 10px,
+            #0066ff 10px,
+            #0066ff 20px,
+            #ffffff 20px,
+            #ffffff 30px,
+            #ff0000 30px,
+            #ff0000 40px);
+    animation: spinPole 2s linear infinite;
+}
+
+/* Animation */
+@keyframes spinPole {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(56.56px);
+    }
+}
+
+@media (max-width: 1100px) {
+    .barber-poles-container {
+        display: none;
+        /* Hide on smaller screens */
+    }
+}
+
+.hero-video-container {
+    position: absolute;
+    right: 2%;
+    /* Moved closer to the right edge */
+    top: 25vh;
+    width: 250px;
+    height: 420px;
+    /* Vertical Story Format */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    transform: none;
+    /* Removed rotation to make it straight */
+    transition: all 0.4s ease;
+    z-index: 5;
+    background: #000;
+    cursor: pointer;
+}
+
+.hero-video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-video-container:hover {
+    transform: scale(1.05) translateY(-10px);
+    /* Removed rotation reset since it starts straight now */
+    border-color: var(--gold);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6);
+    z-index: 10;
+}
+
+/* Background Slideshow Styles */
+.hero-bg-slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+
+
+/* Hide on smaller tablets and mobile if it gets too crowded */
+@media (max-width: 1100px) {
+    .hero-video-container {
+        width: 200px;
+        height: 340px;
+        right: 2%;
+        bottom: 10%;
+    }
+}
+
+@media (max-width: 900px) {
+    .hero-video-container {
+        display: block;
+        position: relative;
+        width: 250px;
+        height: 350px;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        margin: 40px auto 0;
+        /* Center below text */
+        transform: rotate(0deg) !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+}
+
+/* =========================================
+   SERVICES SECTION (MODERN LIST)
+   ========================================= */
+.section-services {
+    padding: 50px 0;
+    min-height: 100vh;
+    /* Full page height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #FFFFFF;
+    position: relative;
+    /* Clean white background as requested for list */
+}
+
+/* =========================================
+   SERVICE GALLERY (IMAGE GRID)
+   ========================================= */
+.service-menu-wrapper {
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.service-gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    /* Force 5 items side by side */
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.service-item {
+    position: relative;
+    height: 180px;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+}
+
+.service-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    filter: brightness(0.7);
+}
+
+.service-item .service-name {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #FFF;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    z-index: 2;
+    letter-spacing: 1px;
+}
+
+.service-item:hover,
+.service-item.active {
+    border-color: #000;
+    transform: scale(1.15) translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+.service-item:hover img,
+.service-item.active img {
+    transform: scale(1.1);
+    filter: brightness(1);
+}
+
+/* Nav Arrows */
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 20;
+    transition: all 0.3s ease;
+    color: var(--text-main);
+}
+
+.nav-arrow:hover {
+    background: var(--text-main);
+    color: #FFF;
+}
+
+.prev-service {
+    left: -20px;
+}
+
+.next-service {
+    right: -20px;
+}
+
+/* Contact Section Instagram Button */
+.btn-insta-contact {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--text-main);
+    transition: all 0.3s ease;
+}
+
+.btn-insta-contact i {
+    font-size: 1.8rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-insta-contact span {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.btn-insta-contact:hover {
+    color: var(--royal-blue);
+}
+
+.btn-insta-contact:hover i {
+    transform: rotate(360deg);
+    color: #E1306C;
+}
+
+.service-details-container {
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 20px;
+    min-height: 200px;
+    position: relative;
+    /* For absolute arrows */
+}
+
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: var(--wood);
+    cursor: pointer;
+    padding: 10px;
+    transition: all 0.3s ease;
+    z-index: 100;
+    opacity: 0.6;
+}
+
+.nav-arrow:hover {
+    color: var(--gold);
+    transform: translateY(-50%) scale(1.2);
+    opacity: 1;
+}
+
+.prev-service {
+    left: 10px;
+}
+
+.next-service {
+    right: 10px;
+}
+
+@media (max-width: 768px) {
+    .nav-arrow {
+        display: none;
+        /* Often easier to just tap the icons on mobile, but we can keep them if space permits */
+    }
+}
+
+.service-detail {
+    display: none;
+    /* Hidden by default */
+    animation: fadeIn 0.5s ease;
+}
+
+.service-detail.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.service-detail h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--wood);
+    border-bottom: 1px solid #E0E0E0;
+    padding-bottom: 15px;
+}
+
+/* Reusing .price-item styles from before, just ensuring list structure matches */
+.service-detail ul {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.price-category h3 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--wood);
+    color: var(--text-main);
+    display: inline-block;
+}
+
+.price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.price-item::before {
+    /* Dotted leader line */
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    width: 100%;
+    border-bottom: 2px dotted #E0E0E0;
+    z-index: -1;
+}
+
+.price-info {
+    padding-right: 15px;
+    background: #FFFFFF;
+    /* Hide dots behind text */
+}
+
+.price-name {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--text-main);
+    display: block;
+    text-transform: uppercase;
+}
+
+.price-desc {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    display: block;
+    margin-top: 5px;
+}
+
+.price-value {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--wood);
+    /* Price in dark grey/wood color */
+    padding-left: 15px;
+    background: #FFFFFF;
+    /* Hide dots behind price */
+}
+
+@media (max-width: 768px) {
+    .price-list-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+/* =========================================
+   LOUNGE SECTION
+   ========================================= */
+.section-lounge {
+    padding: 100px 0;
+    min-height: 100vh;
+    /* Full page height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--bg-darker);
+}
+
+.lounge-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.lounge-text h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: var(--text-main);
+}
+
+.lounge-text p {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.lounge-features li {
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+    margin-bottom: 15px;
+    color: var(--text-main);
+}
+
+.lounge-features i {
+    color: var(--gold);
+}
+
+.lounge-slideshow {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    /* Fixed height for the big stage */
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border-bottom: 4px solid var(--gold);
+}
+
+.lounge-slideshow img.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out, transform 10s ease;
+    /* Fade and slow zoom effect */
+    transform: scale(1);
+}
+
+.lounge-slideshow img.slide.active {
+    opacity: 1;
+    transform: scale(1.1);
+    /* Subtle zoom while active */
+}
+
+/* =========================================
+   REVIEWS
+   ========================================= */
+.section-reviews {
+    padding: 100px 0;
+    min-height: 100vh;
+    /* Full page height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #161616;
+}
+
+.section-reviews .section-title {
+    color: #FFFFFF;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.review-card {
+    background: #FFFFFF;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #E5E5E5;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+}
+
+.stars {
+    color: #D4AF37;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.review-text {
+    font-style: italic;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.review-author {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-main);
+}
+
+/* Review CTA Card */
+.review-card.cta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: transparent;
+    border: 2px dashed #E5E5E5;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    /* In case it's an anchor */
+}
+
+.review-card.cta:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--gold);
+    transform: translateY(-5px);
+}
+
+.review-card.cta i {
+    font-size: 3rem;
+    color: #E5E5E5;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.review-card.cta:hover i {
+    color: var(--gold);
+}
+
+.review-card.cta h3 {
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.review-card.cta p {
+    color: #CCCCCC;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   CONTACT & FOOTER
+   ========================================= */
+.section-contact {
+    min-height: 100vh;
+    /* Full page height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--bg-darker);
+    padding: 80px 0;
+    color: var(--text-muted);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contact-grid {
+    display: grid;
+    /* Two columns: Left content gets space, Right video fixed width/ratio if needed, but here we use flexible fractions */
+    grid-template-columns: 1fr 350px;
+    /* "Ganz nach rechts" can be achieved by making the right column explicitly the video width */
+    gap: 120px;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.contact-left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.contact-info h4 {
+    color: var(--text-main);
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.contact-item i {
+    color: var(--gold);
+    margin-top: 5px;
+}
+
+.phone-large {
+    font-size: 1.5rem;
+    color: var(--text-main);
+    font-weight: 700;
+    display: block;
+    margin-top: 5px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    filter: grayscale(100%) invert(92%) contrast(83%);
+    border-radius: var(--border-radius);
+}
+
+.contact-video-container {
+    width: 100%;
+    /* "Seiten noch länger" -> Taller height */
+    height: 750px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: #000;
+}
+
+/* Responsive Adjustments for Contact Grid */
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-video-container {
+        height: 500px;
+        /* Bit smaller on mobile but still tall */
+    }
+}
+
+.contact-video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+footer {
+    background: #111;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 900px) {
+    .lounge-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        /* Add JS toggle later if needed, mostly user checks mobile view */
+        border-radius: var(--border-radius);
+    }
+
+    /* =========================================
+   SCROLL ANIMATIONS
+   ========================================= */
+    .mobile-toggle {
+        display: block;
+    }
+
+    .hero {
+        background-position: 70% center;
+    }
+
+    .teaser-badge {
+        display: none;
+    }
+}
+
+
+/* Animation Base Class (handled by JS adding .in-view) */
+.anim-up,
+.anim-left,
+.anim-right,
+.anim-zoom {
+    opacity: 0;
+    transition: all 0.8s ease-out;
+    will-change: opacity, transform;
+}
+
+/* Fade Up (for Services/Lists) */
+.anim-up {
+    transform: translateY(30px);
+}
+
+.anim-up.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fade In Left (for Text Sections) */
+.anim-left {
+    transform: translateX(-50px);
+}
+
+.anim-left.in-view {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Fade In Right (for Images/Sliders) */
+.anim-right {
+    transform: translateX(50px);
+}
+
+.anim-right.in-view {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Zoom In (for Review Cards/Highlights) */
+.anim-zoom {
+    transform: scale(0.9);
+}
+
+.anim-zoom.in-view {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Stagger Delays (for Lists/Grids) */
+.delay-100 {
+    transition-delay: 0.1s;
+}
+
+.delay-200 {
+    transition-delay: 0.2s;
+}
+
+.delay-300 {
+    transition-delay: 0.3s;
+}
+
+.delay-400 {
+    transition-delay: 0.4s;
+}
+
+/* =========================================
+   NEW REVIEW BUTTON
+   ========================================= */
+.reviews-cta-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.btn-review-rect {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    /* Space between text and icon */
+    padding: 18px 80px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #FFFFFF;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border-radius: 4px;
+    min-width: 300px;
+    position: relative;
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+}
+
+.btn-review-rect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #FFFFFF;
+    transition: width 0.4s ease;
+    z-index: -1;
+}
+
+.btn-review-rect:hover {
+    color: #000000;
+    border-color: #FFFFFF;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+}
+
+.btn-review-rect:hover::before {
+    width: 100%;
+}

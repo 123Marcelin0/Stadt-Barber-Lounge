@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Stadtbarbier Lounge - Mehr als nur ein Haarschnitt. Premium Barber Shop Experience in Lingen.">
+    <title>Stadtbarbier Lounge | Premium Barber & Club Experience</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&family=Outfit:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Mobile Toggle (Hamburger) -->
+    <div class="mobile-toggle" id="mobileToggle">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="#" class="logo-sidebar">
+                <img src="assets/images/logo_new.jpg" alt="Stadtbarbier Lounge Logo">
+            </a>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#services">PREISLISTE</a></li>
+                <li><a href="#lounge">DIE LOUNGE</a></li>
+                <li><a href="#reviews">BEWERTUNGEN</a></li>
+                <li><a href="#contact">KONTAKT</a></li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="sidebar-insta-wrapper">
+                <a href="https://www.instagram.com/stadtbarbier_lounge/" target="_blank" class="btn-insta-sidebar">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span class="insta-handle">@stadtbarbier_lounge</span>
+                </a>
+            </div>
+            <div class="sidebar-copyright">
+                &copy; 2025
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content Wrapper -->
+    <main class="main-content">
+
+
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <!-- Background Slideshow -->
+            <div class="hero-bg-slideshow" id="heroSlideshow">
+                <div class="hero-slide active" style="background-image: url('assets/images/IMG_3524.jpg');"></div>
+                <div class="hero-slide" style="background-image: url('assets/images/hero_cropped.jpg');"></div>
+                <div class="hero-slide" style="background-image: url('assets/images/IMG_3541.jpg');"></div>
+                <div class="hero-slide" style="background-image: url('assets/images/IMG_3528.jpg');"></div>
+            </div>
+            <div class="container hero-content">
+                <span class="section-subtitle">WELCOME TO THE CLUB</span>
+                <h1>PREMIUM BARBER EXPERIENCE <br>bei Stadtbarbier Lounge <br><span class="text-gold">EXKLUSIV IN
+                        LINGEN.</span></h1>
+
+                <div class="hero-buttons">
+                    <a href="https://www.google.de/maps/place/Stadtbarbier-Lounge/@52.5189134,7.3113098,17z/data=!3m1!4b1!4m6!3m5!1s0x47b7874fb275b29b:0x774e4b657667502e!8m2!3d52.5189135!4d7.3161753!16s%2Fg%2F11m67ktzh4?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
+                        target="_blank" class="btn btn-secondary">
+                        <i class="fa-solid fa-location-dot" style="margin-right: 10px;"></i> HIER FINDEST DU UNS
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Video Widget -->
+            <div class="hero-video-container anim-left delay-400">
+                <video autoplay muted playsinline loop>
+                    <source src="assets/images/promo_video.mp4" type="video/mp4">
+                </video>
+            </div>
+
+
+
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section-services">
+            <div class="container">
+                <div class="section-header anim-up">
+
+                    <h2 class="section-title">UNSERE PREISLISTE</h2>
+                </div>
+
+                <!-- Interactive Image Service Menu -->
+                <div class="service-menu-wrapper anim-up delay-100">
+                    <!-- Image Grid -->
+                    <div class="service-gallery">
+                        <div class="service-item active" data-target="hair">
+                            <img src="assets/images/service_hair.png" alt="Haare">
+                            <div class="service-name">HAARE</div>
+                        </div>
+                        <div class="service-item" data-target="beard">
+                            <img src="assets/images/service_beard.png" alt="Bartpflege">
+                            <div class="service-name">BART</div>
+                        </div>
+                        <div class="service-item" data-target="eyes">
+                            <img src="assets/images/service_eyes.png" alt="Augenbrauen">
+                            <div class="service-name">AUGEN & WIMPERN</div>
+                        </div>
+                        <div class="service-item" data-target="laser">
+                            <img src="assets/images/service_laser.png" alt="Laserenthaarung">
+                            <div class="service-name">LASER</div>
+                        </div>
+                        <div class="service-item" data-target="face">
+                            <img src="assets/images/service_facial.png" alt="Gesichtsbehandlung">
+                            <div class="service-name">GESICHT</div>
+                        </div>
+                    </div>
+
+                    <!-- Detailed Price Lists (Hidden by default, shown on click) -->
+                    <div class="service-details-container">
+                        <div class="nav-arrow prev-service"><i class="fa-solid fa-chevron-left"></i></div>
+                        <div class="nav-arrow next-service"><i class="fa-solid fa-chevron-right"></i></div>
+
+                        <!-- Hair Details -->
+                        <div class="service-detail active" id="hair">
+                            <h3>HAARSCHNITTE & STYLING</h3>
+                            <ul>
+                                <li class="price-item">
+                                    <div class="price-info">
+                                        <span class="price-name">Herrenhaarschnitt & Styling</span>
+                                        <span class="price-desc">Persönliche Beratung, präziser Schnitt & Styling</span>
+                                    </div>
+                                    <span class="price-value">ab 25€</span>
+                                </li>
+                                <li class="price-item">
+                                    <div class="price-info">
+                                        <span class="price-name">Maschinenhaarschnitt</span>
+                                        <span class="price-desc">Einheitliche Länge, Konturen sauber
+                                            ausgearbeitet</span>
+                                    </div>
+                                    <span class="price-value">ab 18€</span>
+                                </li>
+                                <li class="price-item">
+                                    <div class="price-info">
+                                        <span class="price-name">Junior Racer Cut</span>
+                                        <span class="price-desc">Bis 12 Jahre, Schnitt auf dem Rennauto-Stuhl</span>
+                                    </div>
+                                    <span class="price-value">ab 18€</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Beard Details -->
+                        <div class="service-detail" id="beard">
+                            <h3>BARTPFLEGE & RASUR</h3>
+                            <ul>
+                                <li class="price-item">
+                                    <div class="price-info">
+                                        <span class="price-name">Bartpflege & Rasur</span>
+                                        <span class="price-desc">Formgebung mit Schere/Maschine, Konturen nass</span>
+                                    </div>
+                                    <span class="price-value">ab 15€</span>
+                                </li>
+                                <li class="price-item">
+                                    <div class="price-info">
+                                        <span class="price-name">Hot Towel Shave</span>
+                                        <span class="price-desc">Traditionelle Nassrasur mit heißer Kompresse</span>
+                                    </div>
+                                    <span class="price-value">ab 25€</span>
+                                </li>
+                                <li class="price-item">
+                                    <div class="price-info">
+                                        <span class="price-name">Bart Färben</span>
+                                        <span class="price-desc">Natürliche Grauabdeckung für den Bart</span>
+                                    </div>
+                                    <span class="price-value">ab 15€</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Eyes Details -->
+                        <div class="service-detail" id="eyes">
+                            <h3>AUGENBRAUEN & WIMPERN</h3>
+                            <ul>
+                                <li class="price-item">
+                                    <div class="price-info">
+                                        <span class="price-name">Augenbrauen Zupfen</span>
+                                        <span class="price-desc">Mit Fadentechnik modelliert</span>
+                                    </div>
+                                    <span class="price-value">ab 10€</span>
+                                </li>
+                                <li class="price-item">
+                                    <div class="price-info">
+                                        <span class="price-name">Augenbrauen Färben</span>
+                                        <span class="price-desc">Betonung der natürlichen Form</span>
+                                    </div>
+                                    <span class="price-value">ab 10€</span>
+                                </li>
+                                <li class="price-item">
+                                    <div class="price-info">
+                                        <span class="price-name">Wimpern Färben</span>
+                                        <span class="price-desc">Für einen ausdrucksstarken Blick</span>
+                                    </div>
+                                    <span class="price-value">ab 12€</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Laser Details -->
+                        <div class="service-detail" id="laser">
+                            <h3>LASER DAUERHAFTE ENTHAARUNG</h3>
+                            <ul>
+                                <li class="price-item">
+                                    <div class="price-info">
+                                        <span class="price-name">Wangenknochen</span>
+                                        <span class="price-desc">Dauerhafte Konturschärfung</span>
+                                    </div>
+                                    <span class="price-value">ab 30€</span>
+                                </li>
+                                <li class="price-item">
+                                    <div class="price-info">
+                                        <span class="price-name">Nacken</span>
+                                        <span class="price-desc">Sauberer Nackenabschluss dauerhaft</span>
+                                    </div>
+                                    <span class="price-value">ab 35€</span>
+                                </li>
+                                <li class="price-item">
+                                    <div class="price-info">
+                                        <span class="price-name">Ohren / Nase</span>
+                                        <span class="price-desc">Schonende Entfernung störender Härchen</span>
+                                    </div>
+                                    <span class="price-value">ab 20€</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Face Details -->
+                        <div class="service-detail" id="face">
+                            <h3>GESICHTSBEHANDLUNG</h3>
+                            <ul>
+                                <li class="price-item">
+                                    <div class="price-info">
+                                        <span class="price-name">Gesichtsreinigung</span>
+                                        <span class="price-desc">Black Mask & Feuchtigkeitspflege</span>
+                                    </div>
+                                    <span class="price-value">ab 15€</span>
+                                </li>
+                                <li class="price-item">
+                                    <div class="price-info">
+                                        <span class="price-name">Face Sauna</span>
+                                        <span class="price-desc">Dampfbehandlung zur Porenöffnung</span>
+                                    </div>
+                                    <span class="price-value">ab 20€</span>
+                                </li>
+                                <li class="price-item">
+                                    <div class="price-info">
+                                        <span class="price-name">Premium Facial</span>
+                                        <span class="price-desc">Peeling, Maske, Dampf & Gesichtsmassage</span>
+                                    </div>
+                                    <span class="price-value">ab 35€</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Lounge Section -->
+        <section id="lounge" class="section-lounge">
+            <div class="container">
+                <div class="lounge-container">
+                    <div class="lounge-slideshow anim-right" id="loungeSlideshow">
+                        <img src="assets/images/IMG_3523.jpg" class="slide active" alt="Barber bei der Arbeit">
+                        <img src="assets/images/IMG_3525.jpg" class="slide" alt="Stadtbarbier Lounge">
+                        <img src="assets/images/IMG_3541.jpg" class="slide" alt="Stadtbarbier Lounge">
+                        <img src="assets/images/IMG_3528.jpg" class="slide" alt="Whisky & Details">
+                        <img src="assets/images/IMG_3524.jpg" class="slide" alt="Shop Interior">
+                        <img src="assets/images/IMG_3529.jpg" class="slide" alt="Atmosphere">
+                    </div>
+
+                    <div class="lounge-text anim-left">
+                        <span class="section-subtitle">THE EXPERIENCE</span>
+                        <h2>ATMOSPHÄRE TRIFFT <span class="text-blue">HANDWERK</span></h2>
+                        <p>Unsere Stadtbarbier Lounge ist mehr als nur ein Friseursalon. Wir haben einen Ort
+                            geschaffen, an
+                            dem Mann sich wohlfühlt. Entfliehe dem Alltag und genieße deinen Aufenthalt bei uns.</p>
+                        <p>Ob ein entspannter Espresso oder ein Tee in unserem Wartebereich – hier nimmst du dir
+                            Zeit für
+                            dich.</p>
+
+                        <ul class="lounge-features">
+                            <li><i class="fa-solid fa-check"></i> Exklusiver Wartebereich</li>
+                            <li><i class="fa-solid fa-check"></i> Premium Getränke-Service</li>
+                            <li><i class="fa-solid fa-check"></i> Modernes Industrial Design mit Eichenholz</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews" class="section-reviews">
+            <div class="container">
+                <div class="section-header anim-zoom">
+                    <span class="section-subtitle">SOCIAL PROOF</span>
+                    <h2 class="section-title">KUNDENSTIMMEN</h2>
+                </div>
+
+                <div class="reviews-grid">
+                    <div class="review-card anim-zoom delay-100">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="review-text">"Hier sind echte Profis am Werk! Gib diesen Leuten eine Schere in die
+                            Hand
+                            und sie machen aus dir ein Kunstwerk!"</p>
+                        <p class="review-author">- Google Rezension</p>
+                    </div>
+                    <div class="review-card anim-zoom delay-200">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="review-text">"Bester Barbershop in Lingen! Das Personal ist super freundlich und die
+                            Atmosphäre ist entspannt. Man fühlt sich wie bei Freunden."</p>
+                        <p class="review-author">- Google Rezension</p>
+                    </div>
+                    <div class="review-card anim-zoom delay-300">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="review-text">"Absolut empfehlenswert. Top Service, faire Preise und das Ergebnis ist
+                            immer
+                            perfekt. Endlich den richtigen Barbier gefunden."</p>
+                        <p class="review-author">- Google Rezension</p>
+                    </div>
+
+                </div>
+
+                <!-- New Centered Review Button -->
+                <div class="reviews-cta-wrapper anim-up delay-200">
+                    <a href="https://search.google.com/local/writereview?placeid=ChIJm7J1sk-Ht0cRLlBndmVLTnc"
+                        target="_blank" class="btn-review-rect">
+                        JETZT BEWERTEN
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-contact">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Info -->
+                    <!-- Left Column: Info & Map -->
+                    <div class="contact-left-column">
+                        <!-- Map -->
+                        <div class="map-container anim-right delay-200">
+                            <!-- Embedding a placeholder map for Lingen Konrad-Adenauer-Ring 10. User used Vercel before so static is fine. -->
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2424.568345123456!2d7.312345!3d52.512345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zKonrad-Adenauer-Ring+10!5e0!3m2!1sde!2sde!4v161234567890"
+                                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+
+                        <div class="contact-info anim-left">
+                            <h4>KONTAKT & ANFAHRT</h4>
+
+                            <div class="contact-item">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <div>
+                                    <p><strong>Stadtbarbier Lounge</strong></p>
+                                    <p>Konrad-Adenauer-Ring 10</p>
+                                    <p>49808 Lingen (Ems)</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <i class="fa-solid fa-phone"></i>
+                                <div>
+                                    <p>Termine & Fragen:</p>
+                                    <a href="tel:059131526494" class="phone-large">0591 315 26 494</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <i class="fa-regular fa-clock"></i>
+                                <div>
+                                    <p>Mo - Fr: 10:00 - 19:00</p>
+                                    <p>Sa: 10:00 - 16:00</p>
+                                    <p>So: Geschlossen</p>
+                                </div>
+                            </div>
+
+                            <div class="social-links" style="margin-top: 20px;">
+                                <a href="https://www.instagram.com/stadtbarbier_lounge/" target="_blank"
+                                    class="btn-insta-contact">
+                                    <i class="fa-brands fa-instagram text-gold"></i>
+                                    <span class="insta-label">@stadtbarbier_lounge</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Promo Video (Full Size) -->
+                    <div class="contact-video-container anim-right delay-300">
+                        <video id="promoVideo" autoplay muted playsinline loop>
+                            <source src="assets/images/promo_video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2025 Stadtbarbier Lounge. All rights reserved.</p>
+                <p style="font-size: 0.8rem; margin-top: 10px;">
+                    <a href="impressum.html" style="margin-right: 15px;">Impressum</a>
+                    <a href="datenschutz.html">Datenschutzerklärung</a>
+                </p>
+            </div>
+        </footer>
+
+        <!-- Floating Mobile Btn -->
+        <a href="https://website-ems-barber-shop.vercel.app" class="floating-btn">
+            <i class="fa-solid fa-calendar-check"></i> TERMIN
+        </a>
+
+    </main>
+    <!-- Antigravity Barber Poles (Fixed Position) -->
+    <div class="barber-poles-container" id="barberPoles">
+        <!-- Left Pole -->
+        <div class="barber-pole left">
+            <div class="pole-cap top"></div>
+            <div class="pole-shaft">
+                <div class="pole-stripes"></div>
+            </div>
+            <div class="pole-cap bottom"></div>
+        </div>
+
+        <!-- Right Pole -->
+        <div class="barber-pole right">
+            <div class="pole-cap top"></div>
+            <div class="pole-shaft">
+                <div class="pole-stripes"></div>
+            </div>
+            <div class="pole-cap bottom"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

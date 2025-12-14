@@ -1,0 +1,19 @@
+{
+    "name": "ems-barber-shop",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "devDependencies": {
+        "vite": "^5.0.0"
+    },
+    "dependencies": {
+        "heic-convert": "^2.1.0",
+        "jpeg-js": "^0.4.4",
+        "sharp": "^0.34.5"
+    }
+}

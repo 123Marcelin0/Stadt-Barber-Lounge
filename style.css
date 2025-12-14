@@ -769,40 +769,57 @@ h4,
 
     /* Hero Section Mobile */
     .hero {
-        padding-left: 20px !important;
-        /* Override current padding */
-        padding-right: 20px;
-        padding-top: 0 !important;
-        justify-content: center;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-top: 100px !important;
+        /* Clear fixed header/toggle */
+        justify-content: flex-start;
+        /* Let flex-direction column handle stacking */
+        flex-direction: column;
         text-align: center;
         align-items: center;
     }
 
+    /* Force container to be 100% width on mobile */
     .hero .container {
-        padding-left: 0 !important;
-        text-align: center;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto;
     }
 
     .hero-content {
-        margin: 0 auto;
-        text-align: center;
+        margin: 0 auto !important;
+        text-align: center !important;
         margin-left: 0 !important;
+        padding: 0 20px !important;
+        max-width: 100% !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .hero-content h1 {
-        font-size: 2.2rem;
-        /* Smaller for mobile */
-        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+        font-size: 2.5rem !important;
+        /* Slightly larger for impact, but responsive */
+        line-height: 1.2 !important;
+        margin-left: 0 !important;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8) !important;
     }
 
     .hero-content p {
-        margin-left: 0;
-        font-size: 1rem;
+        margin-left: 0 !important;
+        text-align: center !important;
+        font-size: 1.1rem !important;
+        padding: 0 10px;
     }
 
     .hero-buttons {
-        margin-left: 0;
-        justify-content: center;
+        margin-left: 0 !important;
+        justify-content: center !important;
+        width: 100%;
+        display: flex;
     }
 
     /* Services Mobile */
